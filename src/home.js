@@ -13,7 +13,16 @@ class Home extends React.Component {
     };
 
     componentDidMount() {
-        this.setState({trails: [{"name": "Bobs", "status": "open"},{"name": "SMP", "status": "closed"},{"name": "SWOPE", "status": "closed", "lastUpdated": "yesterday"}], loading: false});
+        this.getTrails();
+    }
+
+    async getTrails()
+    {
+        console.log('here')
+        fetch("http://localhost:5000/api/v1/tweets/")
+        .then(response=>response.json())
+        .then(data=>{this.setState({ trails: [...data], loading: false });});
+        
     }
 
     render() {
