@@ -2,16 +2,14 @@ import React from 'react';
 import {
     AppRegistry,
     StyleSheet,
-    View,
+    View
 } from 'react-native';
 import Home from './home';
-import Header from './header/header';
 
 class App extends React.Component {
     render() {
         return (
             <View style = {styles.appContainer}>
-                <Header title="KC Trails Status" />
                 <Home />
             </View>
         );
